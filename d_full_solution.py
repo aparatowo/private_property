@@ -14,8 +14,11 @@ class Tree:
         return self.__is_fruit_tree
 
     @is_fruit_tree.setter
-    def is_fruit_tree(self, user_input):    # this is a setter
-        self.__is_fruit_tree = bool(user_input)     # we should deal with input here so we have normalized attr values
+    def is_fruit_tree(self, user_input): # this is a setter
+        if user_input in ['f', 'false']:
+            self.__is_fruit_tree = False
+        else:
+            self.__is_fruit_tree = bool(user_input)   # we should deal with input here so we have normalized attr values
 
     @is_fruit_tree.deleter
     def is_fruit_tree(self):  # this is a deleter
@@ -48,5 +51,6 @@ if __name__ == "__main__":
 
     print()
     print(see(t))
+    print()
     print(dir(t))
     print(vars(t))
